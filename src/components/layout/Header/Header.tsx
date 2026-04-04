@@ -18,13 +18,13 @@ export function Header() {
               <Link href="/">Início</Link>
             </li>
             <li>
-              <Link href="/">Soluções</Link>
+              <Link href="#solutions">Soluções</Link>
             </li>
             <li>
-              <Link href="/">Portfolio</Link>
+              <Link href="#portfolio">Portfolio</Link>
             </li>
             <li>
-              <Link href="/">Quem somos</Link>
+              <Link href="#about">Quem somos</Link>
             </li>
           </ul>
 

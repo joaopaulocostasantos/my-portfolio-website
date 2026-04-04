@@ -1,0 +1,42 @@
+.solutionsCards {
+  background: linear-gradient(
+    235deg,
+    rgba(179, 255, 56, 0.05) 1.17%,
+    rgba(255, 255, 255, 0.01) 60.24%
+  );
+  border-radius: 10px;
+  border: 1px solid var(--color-border);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: start;
+  padding: 25px 30px;
+  gap: 10px;
+
+  .solutionsCards__icons {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--color-background-bagde-tag);
+    border-radius: 100%;
+    padding: 15px;
+  }
+
+  .solutionsCards__content {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+
+    h2 {
+      font-size: 32px;
+      font-weight: 600;
+      color: var(--color-text);
+    }
+
+    p {
+      font-size: 18px;
+      font-weight: 400;
+      color: var(--color-text-tertiary);
+    }
+  }
+}

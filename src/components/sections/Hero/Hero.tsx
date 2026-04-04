@@ -29,7 +29,7 @@ export function Hero() {
 
         <div className={styles.hero__ctas}>
           <Cta />
-          <div className={styles.hero__cta__seePortfolio}>
+          <div className={styles.hero__cta__seePortfolio} id="#portfolio">
             <span className={styles.hero__cta__seePortfolio__text}>
               Veja o Portfólio
             </span>
