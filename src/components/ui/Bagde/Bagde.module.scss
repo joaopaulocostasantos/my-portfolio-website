@@ -1,0 +1,25 @@
+.badge {
+  background: var(--color-background-bagde);
+  width: fit-content;
+  border-radius: 99px;
+  padding: 8px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+
+  .badge__tag {
+    background: var(--color-background-bagde-tag);
+    padding: 8px;
+    border-radius: 99px;
+    font-size: 16px;
+    font-weight: 600;
+  }
+
+  p {
+    background: var(--color-text-bagde);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-size: 16px;
+    font-weight: 300px;
+  }
+}
