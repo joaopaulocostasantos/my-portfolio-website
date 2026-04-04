@@ -2,6 +2,9 @@ import type { Metadata } from "next";
 import { Funnel_Display } from "next/font/google";
 import "./globals.css";
 
+// componentes
+import { Header } from "@/components/layout/Header/Header";
+
 const funnelDisplay = Funnel_Display({
   variable: "--font-funnel-display",
   subsets: ["latin"],
@@ -59,7 +62,10 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="pt-BR" className={`${funnelDisplay.variable}`}>
-      <body>{children}</body>
+      <body>
+        <Header />
+        {children}
+      </body>
     </html>
   );
 }

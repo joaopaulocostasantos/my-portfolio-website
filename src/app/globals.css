@@ -1,5 +1,29 @@
+:root {
+  /* Font Families */
+  --font-funnel-display: "Funnel Display", sans-serif;
+
+  /* Colors */
+  --color-primary: #b1ff34;
+  --color-degrade-primary: linear-gradient(270deg, #b1ff34 0%, #d3ff8c 82.69%);
+  --color-degrade-primary-hover: linear-gradient(
+    270deg,
+    #659b0e 0%,
+    #acf721 82.69%
+  );
+  --color-secondary: #090d0d;
+  --color-background: #0f0f0f;
+  --color-background-nav: rgba(255, 255, 255, 0.05);
+  --color-text: #ffffff;
+  --color-text-secondary: #1e1e1e;
+}
+
 * {
   box-sizing: border-box;
   padding: 0;
   margin: 0;
+}
+
+body {
+  font-family: var(--font-funnel-display), sans-serif;
+  background-color: var(--color-background);
 }
