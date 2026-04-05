@@ -10,6 +10,9 @@ import { Cta } from "@/components/sections/Cta/Cta";
 import { ArrowDownToLine } from "lucide-react";
 import { BriefcaseBusiness, PanelsTopLeft, FolderCode } from "lucide-react";
 
+// next
+import Link from "next/link";
+
 export function Hero() {
   return (
     <section className={styles.hero}>
@@ -29,14 +32,14 @@ export function Hero() {
 
         <div className={styles.hero__ctas}>
           <Cta />
-          <div className={styles.hero__cta__seePortfolio} id="#portfolio">
+          <Link href="#portfolio" className={styles.hero__cta__seePortfolio}>
             <span className={styles.hero__cta__seePortfolio__text}>
               Veja o Portfólio
             </span>
             <div className={styles.hero__cta__seePortfolio__icon}>
               <ArrowDownToLine />
             </div>
-          </div>
+          </Link>
         </div>
 
         <div className={styles.hero__highlightsContainer}>
