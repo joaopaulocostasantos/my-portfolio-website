@@ -4,6 +4,7 @@ import "./globals.css";
 
 // componentes
 import { Header } from "@/components/layout/Header/Header";
+import { Footer } from "@/components/layout/Footer/Footer";
 
 const funnelDisplay = Funnel_Display({
   variable: "--font-funnel-display",
@@ -65,6 +66,7 @@ export default function RootLayout({
       <body>
         <Header />
         {children}
+        <Footer />
       </body>
     </html>
   );
