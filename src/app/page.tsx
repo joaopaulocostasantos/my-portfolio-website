@@ -1,3 +1,4 @@
+import { About } from "@/components/sections/About/About";
 import { Hero } from "@/components/sections/Hero/Hero";
 import { Portfolio } from "@/components/sections/Portfolio/Portfolio";
 import { Solutions } from "@/components/sections/Solutions/Solutions";
@@ -8,6 +9,7 @@ export default function Home() {
       <Hero />
       <Solutions />
       <Portfolio />
+      <About />
     </main>
   );
 }

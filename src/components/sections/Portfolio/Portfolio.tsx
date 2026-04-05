@@ -15,7 +15,7 @@ export function Portfolio() {
           <h3>Projetos realizados</h3>
         </div>
 
-        <div className={styles.projects}>
+        <div className={styles.projects} id="portfolio">
           {projects.map((project, index) => (
             <PortfolioCards key={index} img={project.img} link={project.link} />
           ))}
