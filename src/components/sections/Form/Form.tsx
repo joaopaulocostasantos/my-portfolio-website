@@ -1,6 +1,12 @@
 "use client";
 
-import { useActionState, useMemo, useState, type FormEvent } from "react";
+import {
+  useActionState,
+  useMemo,
+  useState,
+  type ChangeEvent,
+  type FormEvent,
+} from "react";
 import { useFormStatus } from "react-dom";
 import { Container } from "@/components/container/Container";
 import { Bagde } from "@/components/ui/Bagde/Bagde";
@@ -38,14 +44,33 @@ function SubmitButton() {
   );
 }
 
+function formatWhatsapp(value: string) {
+  const digits = value.replace(/\D/g, "").slice(0, 11);
+
+  if (digits.length === 0) {
+    return "";
+  }
+
+  if (digits.length <= 2) {
+    return `(${digits}`;
+  }
+
+  if (digits.length <= 7) {
+    return `(${digits.slice(0, 2)}) ${digits.slice(2)}`;
+  }
+
+  return `(${digits.slice(0, 2)}) ${digits.slice(2, 3)} ${digits.slice(3, 7)}-${digits.slice(7)}`;
+}
+
 export function Form({ action }: FormProps) {
   const [state, formAction] = useActionState(action, initialState);
   const [clientErrors, setClientErrors] = useState<LeadFieldErrors>({});
 
   const fieldErrors = useMemo(() => {
-    return Object.keys(clientErrors).length > 0
-      ? clientErrors
-      : state.fieldErrors;
+    return {
+      ...state.fieldErrors,
+      ...clientErrors,
+    };
   }, [clientErrors, state.fieldErrors]);
 
   function handleSubmit(event: FormEvent<HTMLFormElement>) {
@@ -71,14 +96,24 @@ export function Form({ action }: FormProps) {
 
   function clearFieldError(fieldName: keyof LeadFieldErrors) {
     setClientErrors((currentErrors) => {
-      if (!currentErrors[fieldName]) {
+      const mergedErrors = {
+        ...state.fieldErrors,
+        ...currentErrors,
+      };
+
+      if (!mergedErrors[fieldName]) {
         return currentErrors;
       }
 
       const nextErrors = { ...currentErrors };
-      delete nextErrors[fieldName];
+      nextErrors[fieldName] = undefined;
       return nextErrors;
     });
+  }
+
+  function handleWhatsappChange(event: ChangeEvent<HTMLInputElement>) {
+    event.target.value = formatWhatsapp(event.target.value);
+    clearFieldError("whatsapp");
   }
 
   return (
@@ -131,8 +166,22 @@ export function Form({ action }: FormProps) {
                 placeholder="Nome da empresa"
                 autoComplete="organization"
                 defaultValue={state.values.nome_empresa}
+                aria-invalid={Boolean(fieldErrors.nome_empresa)}
+                aria-describedby={
+                  fieldErrors.nome_empresa ? "nome_empresa-error" : undefined
+                }
                 onChange={() => clearFieldError("nome_empresa")}
+                required
               />
+              {fieldErrors.nome_empresa ? (
+                <p
+                  className={styles.form__error}
+                  id="nome_empresa-error"
+                  role="alert"
+                >
+                  {fieldErrors.nome_empresa}
+                </p>
+              ) : null}
             </div>
 
             <div className={styles.form__field}>
@@ -160,12 +209,14 @@ export function Form({ action }: FormProps) {
                 type="tel"
                 placeholder="WhatsApp com DDD"
                 autoComplete="tel"
-                defaultValue={state.values.whatsapp}
+                defaultValue={formatWhatsapp(state.values.whatsapp)}
                 aria-invalid={Boolean(fieldErrors.whatsapp)}
                 aria-describedby={
                   fieldErrors.whatsapp ? "whatsapp-error" : undefined
                 }
-                onChange={() => clearFieldError("whatsapp")}
+                inputMode="numeric"
+                maxLength={16}
+                onChange={handleWhatsappChange}
                 required
               />
               {fieldErrors.whatsapp ? (

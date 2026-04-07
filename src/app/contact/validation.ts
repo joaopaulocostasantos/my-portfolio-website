@@ -40,6 +40,10 @@ export function validateLeadForm(values: LeadFormValues): LeadFieldErrors {
     errors.nome_completo = "Informe seu nome completo.";
   }
 
+  if (!values.nome_empresa) {
+    errors.nome_empresa = "Informe o nome da empresa.";
+  }
+
   if (!values.email) {
     errors.email = "Informe seu e-mail.";
   } else if (!emailRegex.test(values.email)) {

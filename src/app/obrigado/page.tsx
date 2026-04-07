@@ -8,6 +8,7 @@ import { Cta } from "@/components/sections/Cta/Cta";
 import { Bagde } from "@/components/ui/Bagde/Bagde";
 
 export default function Obrigado() {
+  // redirecionar para whatsapp
   useEffect(() => {
     const timeoutId = window.setTimeout(() => {
       window.location.href =
