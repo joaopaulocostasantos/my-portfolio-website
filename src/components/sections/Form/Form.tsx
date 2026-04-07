@@ -1,50 +1,238 @@
-import { Bagde } from "@/components/ui/Bagde/Bagde";
-import styles from "./Form.module.scss";
-import { Container } from "@/components/container/Container";
+"use client";
 
-export function Form() {
+import { useActionState, useMemo, useState, type FormEvent } from "react";
+import { useFormStatus } from "react-dom";
+import { Container } from "@/components/container/Container";
+import { Bagde } from "@/components/ui/Bagde/Bagde";
+import type { SubmitLeadState } from "@/app/contact/actions";
+import {
+  initialLeadFormValues,
+  validateLeadForm,
+  type LeadFieldErrors,
+} from "@/app/contact/validation";
+import styles from "./Form.module.scss";
+
+// types
+type FormProps = {
+  action: (
+    state: SubmitLeadState,
+    formData: FormData,
+  ) => Promise<SubmitLeadState>;
+};
+
+// state
+const initialState: SubmitLeadState = {
+  error: "",
+  fieldErrors: {},
+  values: initialLeadFormValues,
+};
+
+// funciton que renderiza o botao de submit, mostrando um estado de "Enviando..." quando o form estiver sendo submetido
+function SubmitButton() {
+  const { pending } = useFormStatus();
+
+  return (
+    <button type="submit" disabled={pending} aria-disabled={pending}>
+      {pending ? "Enviando..." : "Enviar a mensagem agora"}
+    </button>
+  );
+}
+
+export function Form({ action }: FormProps) {
+  const [state, formAction] = useActionState(action, initialState);
+  const [clientErrors, setClientErrors] = useState<LeadFieldErrors>({});
+
+  const fieldErrors = useMemo(() => {
+    return Object.keys(clientErrors).length > 0
+      ? clientErrors
+      : state.fieldErrors;
+  }, [clientErrors, state.fieldErrors]);
+
+  function handleSubmit(event: FormEvent<HTMLFormElement>) {
+    const formData = new FormData(event.currentTarget);
+    const values = {
+      nome_completo: String(formData.get("nome_completo") ?? "").trim(),
+      nome_empresa: String(formData.get("nome_empresa") ?? "").trim(),
+      email: String(formData.get("email") ?? "").trim(),
+      whatsapp: String(formData.get("whatsapp") ?? "").trim(),
+      servico: String(formData.get("servico") ?? "").trim(),
+    };
+
+    const errors = validateLeadForm(values);
+
+    if (Object.keys(errors).length > 0) {
+      event.preventDefault();
+      setClientErrors(errors);
+      return;
+    }
+
+    setClientErrors({});
+  }
+
+  function clearFieldError(fieldName: keyof LeadFieldErrors) {
+    setClientErrors((currentErrors) => {
+      if (!currentErrors[fieldName]) {
+        return currentErrors;
+      }
+
+      const nextErrors = { ...currentErrors };
+      delete nextErrors[fieldName];
+      return nextErrors;
+    });
+  }
+
   return (
     <section className={styles.form__container}>
       <Container>
-        <div className={styles.form__wrapper}>
+        <div className={styles.form__wrapper} id="contact">
           <div className={styles.form__content}>
-            <Bagde tag="Formulário" description="Preencha com dados válidos" />
+            <Bagde tag="Formulario" description="Preencha com dados validos" />
             <h4>
-              Preencha o formulário para{" "}
-              <span>agendar uma reunião on-line</span>
+              Preencha o formulario para{" "}
+              <span>agendar uma reuniao on-line</span>
             </h4>
           </div>
 
-          <form className={styles.form}>
-            <input type="text" placeholder="Nome Completo" required />
-            <input type="text" placeholder="Nome da empresa" required />
-            <input type="email" placeholder="E-mail" required />
-            <input type="tel" placeholder="WhatsApp" required />
-            <select required>
-              <option value="">Selecione o serviço desejado</option>
-              <option value="landing-page">Landing Page</option>
-              <option value="site-institucional">Site Institucional</option>
-              <option value="site-institucional-com-blog">
-                Site Institucional com blog
-              </option>
-              <option value="blog">Blog</option>
-              <option value="loja-virtual">Loja Virtual</option>
-              <option value="cardapio-digital">Cardápio Digital</option>
-              <option value="cardapio-digital">
-                Design para Social Media e Criativos
-              </option>
-              <option value="design-ui-ux">Design UI/UX</option>
-              <option value="sistemas-web-sob-demanda">
-                Sistemas Web Sob Demanda
-              </option>
-              <option value="identidade-visual-completa">
-                Identidade Visual Completa
-              </option>
-              <option value="gestao-de-trafego-pago-e-criativos">
-                Gestão de Tráfego Pago + Criativos
-              </option>
-            </select>
-            <button type="submit">Enviar a mensagem agora</button>
+          <form
+            className={styles.form}
+            action={formAction}
+            onSubmit={handleSubmit}
+            noValidate
+          >
+            <div className={styles.form__field}>
+              <input
+                name="nome_completo"
+                type="text"
+                placeholder="Nome completo"
+                autoComplete="name"
+                defaultValue={state.values.nome_completo}
+                aria-invalid={Boolean(fieldErrors.nome_completo)}
+                aria-describedby={
+                  fieldErrors.nome_completo ? "nome_completo-error" : undefined
+                }
+                onChange={() => clearFieldError("nome_completo")}
+                required
+              />
+              {fieldErrors.nome_completo ? (
+                <p
+                  className={styles.form__error}
+                  id="nome_completo-error"
+                  role="alert"
+                >
+                  {fieldErrors.nome_completo}
+                </p>
+              ) : null}
+            </div>
+
+            <div className={styles.form__field}>
+              <input
+                name="nome_empresa"
+                type="text"
+                placeholder="Nome da empresa"
+                autoComplete="organization"
+                defaultValue={state.values.nome_empresa}
+                onChange={() => clearFieldError("nome_empresa")}
+              />
+            </div>
+
+            <div className={styles.form__field}>
+              <input
+                name="email"
+                type="email"
+                placeholder="E-mail"
+                autoComplete="email"
+                defaultValue={state.values.email}
+                aria-invalid={Boolean(fieldErrors.email)}
+                aria-describedby={fieldErrors.email ? "email-error" : undefined}
+                onChange={() => clearFieldError("email")}
+                required
+              />
+              {fieldErrors.email ? (
+                <p className={styles.form__error} id="email-error" role="alert">
+                  {fieldErrors.email}
+                </p>
+              ) : null}
+            </div>
+
+            <div className={styles.form__field}>
+              <input
+                name="whatsapp"
+                type="tel"
+                placeholder="WhatsApp com DDD"
+                autoComplete="tel"
+                defaultValue={state.values.whatsapp}
+                aria-invalid={Boolean(fieldErrors.whatsapp)}
+                aria-describedby={
+                  fieldErrors.whatsapp ? "whatsapp-error" : undefined
+                }
+                onChange={() => clearFieldError("whatsapp")}
+                required
+              />
+              {fieldErrors.whatsapp ? (
+                <p
+                  className={styles.form__error}
+                  id="whatsapp-error"
+                  role="alert"
+                >
+                  {fieldErrors.whatsapp}
+                </p>
+              ) : null}
+            </div>
+
+            <div className={styles.form__field}>
+              <select
+                name="servico"
+                defaultValue={state.values.servico}
+                aria-invalid={Boolean(fieldErrors.servico)}
+                aria-describedby={
+                  fieldErrors.servico ? "servico-error" : undefined
+                }
+                onChange={() => clearFieldError("servico")}
+                required
+              >
+                <option value="" disabled>
+                  Selecione o servico desejado
+                </option>
+                <option value="landing-page">Landing Page</option>
+                <option value="site-institucional">Site Institucional</option>
+                <option value="site-institucional-com-blog">
+                  Site Institucional com blog
+                </option>
+                <option value="blog">Blog</option>
+                <option value="loja-virtual">Loja Virtual</option>
+                <option value="cardapio-digital">Cardapio Digital</option>
+                <option value="social-media-e-criativos">
+                  Design para Social Media e Criativos
+                </option>
+                <option value="design-ui-ux">Design UI/UX</option>
+                <option value="sistemas-web-sob-demanda">
+                  Sistemas Web Sob Demanda
+                </option>
+                <option value="identidade-visual-completa">
+                  Identidade Visual Completa
+                </option>
+                <option value="gestao-de-trafego-pago-e-criativos">
+                  Gestao de Trafego Pago + Criativos
+                </option>
+              </select>
+              {fieldErrors.servico ? (
+                <p
+                  className={styles.form__error}
+                  id="servico-error"
+                  role="alert"
+                >
+                  {fieldErrors.servico}
+                </p>
+              ) : null}
+            </div>
+
+            {state.error ? (
+              <p className={styles.form__error} role="alert">
+                {state.error}
+              </p>
+            ) : null}
+
+            <SubmitButton />
           </form>
         </div>
       </Container>

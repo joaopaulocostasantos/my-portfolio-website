@@ -40,6 +40,12 @@
       flex-direction: column;
       gap: 10px;
 
+      .form__field {
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+      }
+
       input,
       select {
         width: 100%;
@@ -49,13 +55,27 @@
         border-radius: 10px;
         border: 0.5px solid rgba(255, 255, 255, 0.1);
         background: rgba(255, 255, 255, 0.05);
-        color: #3a3a3a;
+        color: var(--color-text-tertiary);
         font-size: 24px;
         font-weight: 400;
 
         &:focus {
           outline: 1px solid var(--color-primary);
         }
+
+        &::placeholder {
+          color: var(--color-text-tertiary);
+          opacity: 1;
+        }
+
+        &[aria-invalid="true"] {
+          border-color: #ff8f8f;
+          outline: 1px solid #ff8f8f;
+        }
+      }
+
+      select option {
+        color: var(--color-secondary);
       }
 
       button {
@@ -69,6 +89,54 @@
         font-size: 24px;
         font-weight: 600;
         cursor: pointer;
+
+        &:disabled {
+          cursor: not-allowed;
+          opacity: 0.7;
+        }
+      }
+    }
+  }
+}
+
+.form__error {
+  color: #ff8f8f;
+  font-size: 16px;
+  line-height: 1.4;
+}
+
+@media (max-width: 1024px) {
+  .form__container {
+    .form__wrapper {
+      flex-direction: column;
+      gap: 40px;
+
+      .form__content,
+      .form {
+        width: 100%;
+      }
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .form__container {
+    margin-top: 64px;
+
+    .form__wrapper {
+      .form__content {
+        h4,
+        h4 span {
+          font-size: 36px;
+        }
+      }
+
+      .form {
+        input,
+        select,
+        button {
+          font-size: 18px;
+        }
       }
     }
   }

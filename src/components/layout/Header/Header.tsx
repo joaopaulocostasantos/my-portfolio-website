@@ -28,7 +28,7 @@ export function Header() {
             </li>
           </ul>
 
-          <Link href={"/contato"} className={styles.nav__contact}>
+          <Link href={"#contact"} className={styles.nav__contact}>
             <span className={styles.nav__contact__text}>Entre em contato</span>
             <div className={styles.nav__contact__icon}>
               <Image src={IconArrow} alt="Ícone de seta" />
