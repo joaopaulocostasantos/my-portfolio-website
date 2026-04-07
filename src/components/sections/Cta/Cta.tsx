@@ -7,10 +7,15 @@ import imgIconArrow from "@/assets/icon_arrow.svg";
 import Image from "next/image";
 import Link from "next/link";
 
-export function Cta() {
+interface CtaProps {
+  innerText: string;
+  url: string;
+}
+
+export function Cta({ innerText, url }: CtaProps) {
   return (
-    <Link href={"#contact"} className={styles.cta}>
-      <span className={styles.cta__text}>Solicitar orçamento</span>
+    <Link href={url} className={styles.cta}>
+      <span className={styles.cta__text}>{innerText}</span>
       <div className={styles.cta__iconArrow}>
         <Image src={imgIconArrow} alt="Seta para direita" />
       </div>

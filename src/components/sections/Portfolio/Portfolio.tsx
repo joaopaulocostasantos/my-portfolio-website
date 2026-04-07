@@ -22,7 +22,7 @@ export function Portfolio() {
         </div>
 
         <div className={styles.cta}>
-          <Cta />
+          <Cta url="#contact" innerText="Solicitar orçamento" />
         </div>
       </Container>
     </section>

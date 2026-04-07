@@ -31,7 +31,7 @@ export function Hero() {
         </h1>
 
         <div className={styles.hero__ctas}>
-          <Cta />
+          <Cta url="#contact" innerText="Solicitar orçamento" />
           <Link href="#portfolio" className={styles.hero__cta__seePortfolio}>
             <span className={styles.hero__cta__seePortfolio__text}>
               Veja o Portfólio

@@ -1,0 +1,36 @@
+.obrigado {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 100px auto;
+
+  .obrigado__container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    .obrigado__title {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin: 24px 0px 50px 0px;
+      gap: 10px;
+
+      h3 {
+        font-size: 64px;
+        color: var(--color-primary);
+        text-align: center;
+        line-height: 110%;
+        font-weight: bolder;
+      }
+
+      p {
+        font-size: 48px;
+        color: var(--color-text);
+        text-align: center;
+        line-height: 110%;
+      }
+    }
+  }
+}
