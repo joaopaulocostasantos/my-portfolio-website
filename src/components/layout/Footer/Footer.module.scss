@@ -18,6 +18,8 @@
       padding: 10px;
       border-radius: 100%;
       cursor: pointer;
+      text-decoration: none;
+      color: var(--color-secondary);
 
       &:hover {
         background: var(--color-secondary);
@@ -37,6 +39,7 @@
 
     span {
       font-weight: 600;
+      margin-right: 5px;
     }
   }
 

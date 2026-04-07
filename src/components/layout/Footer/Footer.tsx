@@ -1,7 +1,7 @@
 import styles from "./Footer.module.scss";
 
 // icons
-import { FaInstagram, FaLinkedin, FaYoutube } from "react-icons/fa";
+import { FaInstagram, FaLinkedin, FaYoutube, FaTiktok } from "react-icons/fa";
 
 // next
 import Link from "next/link";
@@ -12,15 +12,27 @@ export function Footer() {
     <footer className={styles.footer}>
       <Container>
         <div className={styles.footer_icons}>
-          <div className={styles.footer_icon}>
+          <Link
+            href={"https://www.instagram.com/joaopaulosantosoficial/"}
+            target="_black"
+            className={styles.footer_icon}
+          >
             <FaInstagram size={16} />
-          </div>
-          <div className={styles.footer_icon}>
+          </Link>
+          <Link
+            href={"https://www.linkedin.com/in/joaopaulodacostasantos/"}
+            target="_black"
+            className={styles.footer_icon}
+          >
             <FaLinkedin size={16} />
-          </div>
-          <div className={styles.footer_icon}>
-            <FaYoutube size={16} />
-          </div>
+          </Link>
+          <Link
+            href={"https://www.tiktok.com/@joaopaulosantosoficial"}
+            target="_black"
+            className={styles.footer_icon}
+          >
+            <FaTiktok size={16} />
+          </Link>
         </div>
 
         <h5 className={styles.footer_copyright}>
