@@ -1,0 +1,85 @@
+.privacy__policy {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin: 80px 100px;
+  gap: 50px;
+
+  .privacy__policy__header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 24px;
+
+    h1 {
+      font-size: 64px;
+      font-weight: bold;
+      color: var(--color-text);
+
+      span {
+        color: var(--color-primary);
+      }
+    }
+
+    p {
+      color: var(--color-text);
+      font-size: 26px;
+      text-align: center;
+      line-height: 110%;
+    }
+  }
+
+  .privacy__policy__main {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    justify-content: center;
+    gap: 50px;
+  }
+
+  .privacy__policy__intro,
+  .privacy__policy__We__collect__data,
+  .privacy__policy__How__we__use__your__data,
+  .privacy__policy__data__sharing,
+  .privacy__policy__cookies,
+  .privacy__policy__data__retention,
+  .privacy__policy__lgpd,
+  .privacy__policy__security,
+  .privacy__policy__contact {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+  }
+
+  .privacy__policy__intro p,
+  .privacy__policy__We__collect__data p,
+  .privacy__policy__How__we__use__your__data p,
+  .privacy__policy__data__sharing p,
+  .privacy__policy__cookies p,
+  .privacy__policy__data__retention p,
+  .privacy__policy__lgpd p,
+  .privacy__policy__security p,
+  .privacy__policy__contact p {
+    font-size: 24px;
+    color: var(--color-text);
+    font-weight: 400;
+    text-align: justify;
+  }
+
+  .privacy__policy__intro ul,
+  .privacy__policy__We__collect__data ul,
+  .privacy__policy__How__we__use__your__data ul,
+  .privacy__policy__data__sharing ul,
+  .privacy__policy__cookies ul,
+  .privacy__policy__data__retention ul,
+  .privacy__policy__lgpd ul,
+  .privacy__policy__security ul,
+  .privacy__policy__contact ul {
+    color: var(--color-text);
+    font-size: 24px;
+    margin-left: 50px;
+    margin-bottom: 10px;
+  }
+}
