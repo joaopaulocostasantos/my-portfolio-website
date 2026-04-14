@@ -5,7 +5,7 @@ import { Portfolio } from "@/components/sections/Portfolio/Portfolio";
 import { Solutions } from "@/components/sections/Solutions/Solutions";
 
 // pages
-import ContatoPage from "./contact/page";
+import ContatoPage from "./contato/page";
 
 export default function Home() {
   return (

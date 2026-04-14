@@ -41,10 +41,8 @@ export function Footer() {
         </h5>
 
         <div className={styles.footer_links}>
-          <Link href="/termos-e-condicoes-de-uso">
-            Termos e Condição de Uso
-          </Link>
-          <Link href="/privacy-policy">Políticas de Privacidade</Link>
+          <Link href="/termos-e-condicao-de-uso">Termos e Condição de Uso</Link>
+          <Link href="/politica-de-privacidade">Políticas de Privacidade</Link>
         </div>
       </Container>
     </footer>

@@ -10,12 +10,12 @@ import {
 import { useFormStatus } from "react-dom";
 import { Container } from "@/components/container/Container";
 import { Bagde } from "@/components/ui/Bagde/Bagde";
-import type { SubmitLeadState } from "@/app/contact/actions";
+import type { SubmitLeadState } from "@/app/contato/actions";
 import {
   initialLeadFormValues,
   validateLeadForm,
   type LeadFieldErrors,
-} from "@/app/contact/validation";
+} from "@/app/contato/validation";
 import styles from "./Form.module.scss";
 
 // types

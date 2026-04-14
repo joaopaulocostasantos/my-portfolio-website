@@ -1,0 +1,92 @@
+.TermosECondicaoDeUso {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin: 80px 100px;
+  gap: 50px;
+
+  .TermosECondicaoDeUso__header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 80px;
+    gap: 24px;
+
+    h1 {
+      font-size: 64px;
+      font-weight: bold;
+      color: var(--color-text);
+
+      span {
+        color: var(--color-primary);
+      }
+    }
+
+    p {
+      color: var(--color-text);
+      font-size: 26px;
+      text-align: center;
+      line-height: 110%;
+    }
+  }
+
+  .TermosECondicaoDeUso__main {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    justify-content: center;
+    gap: 50px;
+  }
+
+  .TermosECondicaoDeUso__acceptance__of__terms,
+  .TermosECondicaoDeUso__services__provided,
+  .TermosECondicaoDeUso__hiring,
+  .TermosECondicaoDeUso__payment,
+  .TermosECondicaoDeUso__delivery__and__deadlines,
+  .TermosECondicaoDeUso__intellectual__property,
+  .TermosECondicaoDeUso__responsiveness,
+  .TermosECondicaoDeUso__cancellation_and_refund,
+  .TermosECondicaoDeUso__confidentiality,
+  .TermosECondicaoDeUso__changes__to__these__terms,
+  .TermosECondicaoDeUso__contact__and__forum {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+  }
+
+  .TermosECondicaoDeUso__acceptance__of__terms p,
+  .TermosECondicaoDeUso__services__provided p,
+  .TermosECondicaoDeUso__hiring p,
+  .TermosECondicaoDeUso__payment p,
+  .TermosECondicaoDeUso__delivery__and__deadlines p,
+  .TermosECondicaoDeUso__intellectual__property p,
+  .TermosECondicaoDeUso__responsiveness p,
+  .TermosECondicaoDeUso__cancellation_and_refund p,
+  .TermosECondicaoDeUso__confidentiality p,
+  .TermosECondicaoDeUso__changes__to__these__terms p,
+  .TermosECondicaoDeUso__contact__and__forum p {
+    font-size: 24px;
+    color: var(--color-text);
+    font-weight: 400;
+    text-align: justify;
+  }
+
+  .TermosECondicaoDeUso__acceptance__of__terms ul,
+  .TermosECondicaoDeUso__services__provided ul,
+  .TermosECondicaoDeUso__hiring ul,
+  .TermosECondicaoDeUso__payment ul,
+  .TermosECondicaoDeUso__delivery__and__deadlines ul,
+  .TermosECondicaoDeUso__intellectual__property ul,
+  .TermosECondicaoDeUso__responsiveness ul,
+  .TermosECondicaoDeUso__cancellation_and_refund ul,
+  .TermosECondicaoDeUso__confidentiality ul,
+  .TermosECondicaoDeUso__changes__to__these__terms ul,
+  .TermosECondicaoDeUso__contact__and__forum ul {
+    color: var(--color-text);
+    font-size: 24px;
+    margin-left: 50px;
+    margin-bottom: 10px;
+  }
+}

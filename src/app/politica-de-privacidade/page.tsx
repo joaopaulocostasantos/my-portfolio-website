@@ -1,9 +1,9 @@
 import { Bagde } from "@/components/ui/Bagde/Bagde";
-import styles from "./privacy-policy.module.scss";
+import styles from "./Politica-de-privacidade.module.scss";
 import { Container } from "@/components/container/Container";
 import { TermsConsentBlock } from "@/components/ui/TermsConsentBlock/TermsConsentBlock";
 
-export default function PrivacyPolicy() {
+export default function PoliticaDePrivacidade() {
   return (
     <div>
       <Container>
@@ -116,16 +116,16 @@ export default function PrivacyPolicy() {
 
               <ul>
                 <li>
-                  Ferramentas de tecnologia— plataformas de hospedagem,
+                  Ferramentas de tecnologia — plataformas de hospedagem,
                   ferramentas de análise (ex.: Google Analytics) e sistemas de
                   e-mail
                 </li>
                 <li>
-                  Profissionais de apoio— contador e demais profissionais que me
-                  auxiliam na operação dos serviços
+                  Profissionais de apoio — contador e demais profissionais que
+                  me auxiliam na operação dos serviços
                 </li>
                 <li>
-                  Autoridades competentes— quando exigido por lei, ordem
+                  Autoridades competentes — quando exigido por lei, ordem
                   judicial ou necessidade lega
                 </li>
               </ul>
