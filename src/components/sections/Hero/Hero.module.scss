@@ -1,4 +1,4 @@
-.hero {
+﻿.hero {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -47,15 +47,6 @@
   gap: 24px;
   margin-bottom: 80px;
   flex-wrap: wrap;
-}
-
-@media (max-width: 768px) {
-  .hero__ctas {
-    flex-direction: column;
-    gap: 16px;
-    margin-bottom: 40px;
-  }
-}
 
   .hero__cta__seePortfolio {
     display: flex;
@@ -83,6 +74,14 @@
         color: var(--color-primary);
       }
     }
+  }
+}
+
+@media (max-width: 768px) {
+  .hero__ctas {
+    flex-direction: column;
+    gap: 16px;
+    margin-bottom: 40px;
   }
 }
 
