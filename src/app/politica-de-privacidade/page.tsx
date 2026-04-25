@@ -27,10 +27,11 @@ export default function PoliticaDePrivacidade() {
                 João Paulo Santos, prestador autônomo de serviços, inscrito sob
                 o CPF/CNPJ nº 56.143.010/0001-30, com sede em Natal, Rio Grande
                 do Norte, é o responsável pelo tratamento dos seus dados
-                pessoais no contexto dos serviços de desenvolvimento web, UX/UI Design, tráfego pago, SEO e CRO prestados. Esta Política de Privacidade está
-                em conformidade com a Lei Geral de Proteção de Dados (LGPD — Lei
-                nº 13.709/2018) e tem como objetivo garantir total transparência
-                sobre o tratamento das suas informações.
+                pessoais no contexto dos serviços de desenvolvimento web, UX/UI
+                Design, tráfego pago, SEO e CRO prestados. Esta Política de
+                Privacidade está em conformidade com a Lei Geral de Proteção de
+                Dados (LGPD — Lei nº 13.709/2018) e tem como objetivo garantir
+                total transparência sobre o tratamento das suas informações.
               </p>
 
               <TermsConsentBlock innerText="Ao utilizar meu site ou contratar meus serviços, você concorda com os termos desta Política. Caso não concorde, por favor, não prossiga com a utilização dos meus serviços." />

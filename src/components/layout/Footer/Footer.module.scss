@@ -1,6 +1,6 @@
-.footer {
+﻿.footer {
   background: var(--color-background-footer);
-  padding: 30px 0;
+  padding: 30px 20px;
   margin-top: 200px;
   border-top: 1px solid rgba(255, 255, 255, 0.1);
 
@@ -9,6 +9,7 @@
     align-items: center;
     justify-content: center;
     gap: 10px;
+    flex-wrap: wrap;
 
     .footer_icon {
       display: flex;
@@ -20,6 +21,7 @@
       cursor: pointer;
       text-decoration: none;
       color: var(--color-secondary);
+      transition: all 0.3s ease;
 
       &:hover {
         background: var(--color-secondary);
@@ -36,10 +38,16 @@
     font-size: 20px;
     font-weight: 400;
     color: var(--color-text);
+    flex-wrap: wrap;
+    text-align: center;
 
     span {
       font-weight: 600;
       margin-right: 5px;
+    }
+
+    @media (max-width: 768px) {
+      font-size: 16px;
     }
   }
 
@@ -49,17 +57,30 @@
     justify-content: center;
     gap: 10px;
     margin-top: 24px;
+    flex-wrap: wrap;
 
     a {
       font-size: 16px;
       font-weight: 400;
       color: var(--color-text);
       text-decoration: none;
+      transition: all 0.3s ease;
 
       &:hover {
         text-decoration: underline;
         color: var(--color-primary);
       }
     }
+
+    @media (max-width: 768px) {
+      a {
+        font-size: 14px;
+      }
+    }
+  }
+
+  @media (max-width: 768px) {
+    margin-top: 100px;
+    padding: 20px 16px;
   }
 }

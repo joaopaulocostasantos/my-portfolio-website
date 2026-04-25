@@ -48,23 +48,26 @@ export default function TermosECondicaoDeUso() {
 
               <ul>
                 <li>
-                  Sites Institucionais — desenvolvimento de websites modernos e responsivos para apresentação de empresas
+                  Sites Institucionais — desenvolvimento de websites modernos e
+                  responsivos para apresentação de empresas
                 </li>
                 <li>
-                  Landing Pages e Páginas de Vendas — criação de páginas otimizadas para conversão
+                  Landing Pages e Páginas de Vendas — criação de páginas
+                  otimizadas para conversão
                 </li>
                 <li>
-                  E-commerces — desenvolvimento de lojas virtuais com meios de pagamento integrados
+                  E-commerces — desenvolvimento de lojas virtuais com meios de
+                  pagamento integrados
                 </li>
                 <li>
-                  UX/UI Design para Sistemas e Apps — prototipação, wireframes e interfaces digitais
+                  UX/UI Design para Sistemas e Apps — prototipação, wireframes e
+                  interfaces digitais
                 </li>
                 <li>
-                  Gestão de Tráfego Pago — campanhas em Meta Ads e Google Ads com foco em ROI
+                  Gestão de Tráfego Pago — campanhas em Meta Ads e Google Ads
+                  com foco em ROI
                 </li>
-                <li>
-                  SEO e CRO — otimização para buscas e taxas de conversão
-                </li>
+                <li>SEO e CRO — otimização para buscas e taxas de conversão</li>
               </ul>
 
               <p>

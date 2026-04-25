@@ -20,7 +20,8 @@ export function About() {
             <Bagde tag="Sobre mim" description="Me conheça jornada" />
             <h3>João Paulo Santos</h3>
             <h4>
-              Especialista em Web Design e <br /> Desenvolvimento Full-Stack{" "}
+              Especialista em Web Design e <br /> Desenvolvimento
+              Full-Stack{" "}
             </h4>
 
             <div className={styles.about__description}>

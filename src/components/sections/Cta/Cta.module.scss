@@ -1,4 +1,4 @@
-.cta {
+﻿.cta {
   display: flex;
   width: fit-content;
   background: var(--color-background-cta);
@@ -25,5 +25,29 @@
 
   &:hover {
     background: var(--color-degrade-primary-hover);
+  }
+}
+
+@media (max-width: 1024px) {
+  .cta {
+    padding: 12px 32px;
+
+    .cta__text {
+      font-size: 20px;
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .cta {
+    padding: 10px 24px;
+
+    .cta__text {
+      font-size: 16px;
+    }
+
+    .cta__iconArrow {
+      padding: 8px;
+    }
   }
 }

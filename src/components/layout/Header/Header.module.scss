@@ -1,4 +1,4 @@
-.header {
+﻿.header {
   margin-top: 40px;
 }
 
@@ -9,6 +9,9 @@
   padding: 10px 58px;
   display: flex;
   justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+  flex-wrap: wrap;
 }
 
 .nav__menu__desktop {
@@ -24,6 +27,7 @@
     a {
       text-decoration: none;
       color: var(--color-text);
+      transition: color 0.3s ease;
 
       &:hover {
         color: var(--color-primary);
@@ -44,6 +48,8 @@
   display: flex;
   align-items: center;
   gap: 10px;
+  white-space: nowrap;
+  transition: all 0.3s ease;
 
   .nav__contact__text {
     font-size: 20px;
@@ -73,14 +79,54 @@
   }
 }
 
-// Responsive styles
+@media (max-width: 1024px) {
+  .nav {
+    padding: 10px 30px;
+  }
+
+  .nav__menu__desktop li {
+    font-size: 18px;
+  }
+
+  .nav__contact .nav__contact__text {
+    font-size: 18px;
+  }
+}
 
 @media (max-width: 768px) {
+  .header {
+    margin-top: 20px;
+  }
+
+  .nav {
+    padding: 10px 16px;
+    border-radius: 50px;
+  }
+
   .nav__menu__desktop {
     display: none;
   }
 
   .nav__menu__mobile {
     display: block;
+  }
+
+  .nav__contact {
+    padding: 8px 16px;
+
+    .nav__contact__text {
+      font-size: 16px;
+      display: none;
+    }
+
+    .nav__contact__icon {
+      width: 30px;
+      height: 30px;
+
+      svg {
+        width: 20px;
+        height: 20px;
+      }
+    }
   }
 }

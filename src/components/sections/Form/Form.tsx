@@ -244,7 +244,9 @@ export function Form({ action }: FormProps) {
                 <option value="" disabled>
                   Selecione o servico desejado
                 </option>
-                <option value="sites-institucionais">Sites Institucionais</option>
+                <option value="sites-institucionais">
+                  Sites Institucionais
+                </option>
                 <option value="landing-pages-vendas">
                   Landing Pages e Páginas de Vendas
                 </option>
