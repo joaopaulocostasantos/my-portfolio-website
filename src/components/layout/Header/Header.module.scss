@@ -38,6 +38,26 @@
 
 .nav__menu__mobile {
   display: none;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  align-items: center;
+  gap: 24px;
+
+  li {
+    list-style: none;
+
+    a {
+      text-decoration: none;
+      color: var(--color-text);
+      transition: color 0.3s ease;
+      font-size: 16px;
+
+      &:hover {
+        color: var(--color-primary);
+      }
+    }
+  }
 }
 
 .nav__contact {
@@ -101,6 +121,8 @@
   .nav {
     padding: 10px 16px;
     border-radius: 50px;
+    flex-direction: column;
+    align-items: stretch;
   }
 
   .nav__menu__desktop {
@@ -108,11 +130,16 @@
   }
 
   .nav__menu__mobile {
-    display: block;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    width: 100%;
   }
 
   .nav__contact {
     padding: 8px 16px;
+    width: 100%;
+    justify-content: center;
 
     .nav__contact__text {
       font-size: 16px;
