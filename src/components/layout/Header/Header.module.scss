@@ -11,7 +11,7 @@
   justify-content: space-between;
 }
 
-.nav__menu {
+.nav__menu__desktop {
   display: flex;
   align-items: center;
   gap: 32px;
@@ -30,6 +30,10 @@
       }
     }
   }
+}
+
+.nav__menu__mobile {
+  display: none;
 }
 
 .nav__contact {
@@ -66,5 +70,17 @@
 
   &:hover {
     background: var(--color-degrade-primary-hover);
+  }
+}
+
+// Responsive styles
+
+@media (max-width: 768px) {
+  .nav__menu__desktop {
+    display: none;
+  }
+
+  .nav__menu__mobile {
+    display: block;
   }
 }

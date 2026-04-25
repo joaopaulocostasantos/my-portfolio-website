@@ -20,17 +20,17 @@ export function About() {
             <Bagde tag="Sobre mim" description="Me conheça jornada" />
             <h3>João Paulo Santos</h3>
             <h4>
-              Designer Gráfico & <br /> Desenvolvedor Web Full-Stack{" "}
+              Especialista em Web Design e <br /> Desenvolvimento Full-Stack{" "}
             </h4>
 
             <div className={styles.about__description}>
               <p>
                 Com mais de 3 anos de experiência e mais de 30 empresas
-                atendidas em todo o Brasil, uno design estratégico e
-                desenvolvimento front-end para criar soluções digitais que geram
-                resultado real. Atuo como Designer Gráfico, UX/UI e Programador
-                Front-end — entregando desde a identidade visual até o produto
-                final em código, sem ruído entre áreas.
+                atendidas em todo o Brasil, uno estratégia digital com
+                desenvolvimento front-end para criar soluções web que geram
+                resultado real. Atuo como Especialista em UX/UI e Desenvolvedor
+                Full-Stack — entregando desde o design até o produto final em
+                código, com foco em conversão e performance.
               </p>
 
               <p>

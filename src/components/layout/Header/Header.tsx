@@ -13,7 +13,22 @@ export function Header() {
     <header className={styles.header}>
       <Container>
         <nav className={styles.nav}>
-          <ul className={styles.nav__menu}>
+          <ul className={styles.nav__menu__desktop}>
+            <li>
+              <Link href="/">Início</Link>
+            </li>
+            <li>
+              <Link href="#solutions">Soluções</Link>
+            </li>
+            <li>
+              <Link href="#portfolio">Portfolio</Link>
+            </li>
+            <li>
+              <Link href="#about">Quem somos</Link>
+            </li>
+          </ul>
+
+          <ul className={styles.nav__menu__mobile}>
             <li>
               <Link href="/">Início</Link>
             </li>

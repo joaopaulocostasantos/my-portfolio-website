@@ -19,14 +19,14 @@ export function Hero() {
       <Container>
         <div className={styles.hero__badge}>
           <Bagde
-            tag="Design & Tech"
+            tag="Growth Marketing & Tech"
             description="Para marcas inovadores e fortes"
           />
         </div>
         <h1 className={styles.hero__title}>
           Soluções completas em{" "}
           <span className={styles.hero__title__highlight}>
-            design e desenvolvimento web
+            Growth Marketing, UX/UI e Desenvolvimento Web
           </span>
         </h1>
 
@@ -53,7 +53,7 @@ export function Hero() {
           />
           <Highlights
             icon={<FolderCode />}
-            content="Stack moderna de design e tecnologia"
+            content="Growth Marketing e tecnologia"
           />
         </div>
       </Container>

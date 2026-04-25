@@ -1,10 +1,10 @@
 import {
   LayoutPanelLeft,
   ShoppingCart,
-  PenTool,
+  Zap,
   Palette,
   Rocket,
-  FolderCode,
+  Search,
   type LucideIcon,
 } from "lucide-react";
 
@@ -17,38 +17,38 @@ export type Service = {
 export const services: Service[] = [
   {
     icon: LayoutPanelLeft,
-    title: "Site Institucional e Landing Page",
+    title: "Sites Institucionais",
     description:
-      "Desenvolvimento de sites modernos, rápidos e responsivos para apresentar sua empresa e gerar contatos ou vendas com foco em conversão.",
+      "Desenvolvimento de sites modernos e responsivos para apresentar sua empresa com profissionalismo, foco em performance e experiência do usuário.",
+  },
+  {
+    icon: Zap,
+    title: "Landing Pages e Páginas de Vendas",
+    description:
+      "Criação de páginas otimizadas para conversão, com design persuasivo e estratégias de CRO para maximizar seus resultados e vendas.",
   },
   {
     icon: ShoppingCart,
-    title: "Loja Virtual e Cardápio Digital",
+    title: "E-commerces",
     description:
-      "Criação de e-commerces e cardápios online integrados a pagamento e WhatsApp, facilitando pedidos, vendas e gestão do seu negócio.",
-  },
-  {
-    icon: PenTool,
-    title: "Design para Redes Sociais e Criativos",
-    description:
-      "Artes profissionais e consistentes para posts, stories e anúncios que fortalecem sua marca e aumentam o engajamento.",
+      "Desenvolvimento de lojas virtuais completas, integradas a meios de pagamento e sistemas de gestão, para potencializar suas vendas online.",
   },
   {
     icon: Palette,
-    title: "Identidade Visual Completa",
+    title: "UX/UI Design para Sistemas e Apps",
     description:
-      "Criação estratégica da identidade da sua marca com logo, cores, tipografia e materiais visuais para transmitir profissionalismo e consistência em todos os pontos de contato.",
+      "Design estratégico de interfaces para web apps e aplicativos, focando em usabilidade, acessibilidade e experiência do usuário.",
   },
   {
     icon: Rocket,
-    title: "Gestão de Tráfego Pago + Criativos",
+    title: "Gestão de Tráfego Pago",
     description:
-      "Criação de automações estratégicas para captar, organizar e qualificar leads automaticamente, conectando formulários, páginas e canais de contato para aumentar conversões e otimizar seu processo comercial.",
+      "Gestão profissional de campanhas em Meta Ads e Google Ads com estratégias data-driven para gerar leads e vendas com ROI otimizado.",
   },
   {
-    icon: FolderCode,
-    title: "Sistemas Web Sob Demanda",
+    icon: Search,
+    title: "SEO e CRO",
     description:
-      "Desenvolvimento de sistemas personalizados para atender necessidades específicas do seu negócio, com foco em eficiência, controle e escalabilidade.",
+      "Otimização para buscas (SEO) e otimização de taxas de conversão (CRO) para aumentar visibilidade, tráfego orgânico e resultados reais.",
   },
 ];

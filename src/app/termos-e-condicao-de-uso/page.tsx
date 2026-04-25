@@ -34,8 +34,8 @@ export default function TermosECondicaoDeUso() {
               <p>
                 Estes Termos se aplicam a todos os serviços prestados por João
                 Paulo Santos, inscrito sob o CNPJ nº 56.143.010/0001-30, com
-                sede em Natal, Rio Grande do Norte - RN, no âmbito de design
-                gráfico, UX/UI e desenvolvimento web.
+                sede em Natal, Rio Grande do Norte - RN, no âmbito de
+                desenvolvimento web, design UX/UI, tráfego pago, SEO e CRO.
               </p>
 
               <TermsConsentBlock innerText="Caso não concorde com algum ponto destes Termos, não prossiga com a contratação. Estou à disposição para esclarecer qualquer dúvida antes de iniciarmos o projeto." />
@@ -48,21 +48,22 @@ export default function TermosECondicaoDeUso() {
 
               <ul>
                 <li>
-                  Design Gráfico — identidade visual, logotipos, peças gráficas
-                  e materiais institucionais
+                  Sites Institucionais — desenvolvimento de websites modernos e responsivos para apresentação de empresas
                 </li>
                 <li>
-                  UX/UI Design— prototipação, wireframes, interfaces digitais e
-                  design de experiência
+                  Landing Pages e Páginas de Vendas — criação de páginas otimizadas para conversão
                 </li>
                 <li>
-                  Desenvolvimento Front-end — sites, landing pages, blogs, lojas
-                  virtuais e interfaces com React.js, Next.js, WordPress,
-                  Elementor Pro, Woocommerce
+                  E-commerces — desenvolvimento de lojas virtuais com meios de pagamento integrados
                 </li>
                 <li>
-                  Consultoria — análise, estratégia e orientação em projetos de
-                  design e desenvolvimento web
+                  UX/UI Design para Sistemas e Apps — prototipação, wireframes e interfaces digitais
+                </li>
+                <li>
+                  Gestão de Tráfego Pago — campanhas em Meta Ads e Google Ads com foco em ROI
+                </li>
+                <li>
+                  SEO e CRO — otimização para buscas e taxas de conversão
                 </li>
               </ul>
 

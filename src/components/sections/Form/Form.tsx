@@ -244,27 +244,18 @@ export function Form({ action }: FormProps) {
                 <option value="" disabled>
                   Selecione o servico desejado
                 </option>
-                <option value="landing-page">Landing Page</option>
-                <option value="site-institucional">Site Institucional</option>
-                <option value="site-institucional-com-blog">
-                  Site Institucional com blog
+                <option value="sites-institucionais">Sites Institucionais</option>
+                <option value="landing-pages-vendas">
+                  Landing Pages e Páginas de Vendas
                 </option>
-                <option value="blog">Blog</option>
-                <option value="loja-virtual">Loja Virtual</option>
-                <option value="cardapio-digital">Cardapio Digital</option>
-                <option value="social-media-e-criativos">
-                  Design para Social Media e Criativos
+                <option value="ecommerces">E-commerces</option>
+                <option value="ux-ui-design">
+                  UX/UI Design para Sistemas e Apps
                 </option>
-                <option value="design-ui-ux">Design UI/UX</option>
-                <option value="sistemas-web-sob-demanda">
-                  Sistemas Web Sob Demanda
+                <option value="gestao-trafego-pago">
+                  Gestão de Tráfego Pago (Meta Ads, Google Ads)
                 </option>
-                <option value="identidade-visual-completa">
-                  Identidade Visual Completa
-                </option>
-                <option value="gestao-de-trafego-pago-e-criativos">
-                  Gestao de Trafego Pago + Criativos
-                </option>
+                <option value="seo-cro">SEO e CRO</option>
               </select>
               {fieldErrors.servico ? (
                 <p
